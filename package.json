@@ -9,9 +9,11 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0-rc.1",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",
-    "vue-property-decorator": "^7.0.0"
+    "vue-property-decorator": "^7.0.0",
+    "vuetify": "^1.2.0"
   },
   "devDependencies": {
     "@types/chai": "^4.1.0",
@@ -25,6 +27,7 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "typescript": "^3.0.0",
+    "vue-cli-plugin-vuetify": "^0.2.0",
     "vue-template-compiler": "^2.5.17"
   }
 }
