@@ -1,44 +1,40 @@
 <template>
-  <v-container fluid>
-    <v-slide-y-transition mode="out-in">
-      <v-layout column align-center>
-        <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
-        <blockquote>
-          &#8220;First, solve the problem. Then, write the code.&#8221;
-          <footer>
-            <small>
-              <em>&mdash;John Johnson</em>
-            </small>
-          </footer>
-        </blockquote>
-      </v-layout>
-    </v-slide-y-transition>
-  </v-container>
+  <div>
+    <v-menu
+      bottom
+      left>
+      <v-btn slot="activator" icon>
+        <v-icon>more_vert</v-icon>
+      </v-btn>
+      <v-list>
+        <v-list-tile
+          v-for="(action, i) in actions"
+          :key="i">
+          <v-list-tile-title>
+            <v-icon
+              :style="{color: action.color}">
+              {{ action.icon }}
+            </v-icon>
+            {{ action.name }}
+          </v-list-tile-title>
+        </v-list-tile>
+      </v-list>
+    </v-menu>
+  </div>
 </template>
 
-<script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+
+import Action from '@/models/Action';
+
+@Component
+export default class HelloWorld extends Vue {
+  @Prop() private actions!: Action[];
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  /* no-empty */
 </style>

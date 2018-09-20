@@ -45,7 +45,8 @@
       </v-btn>
     </v-toolbar>
     <v-content>
-      <HelloWorld/>
+      <HelloWorld
+        :actions="actions"/>
     </v-content>
     <v-navigation-drawer
       temporary
@@ -70,27 +71,39 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
   },
-  data () {
+  data() {
     return {
       clipped: false,
       drawer: true,
       fixed: false,
       items: [{
         icon: 'bubble_chart',
-        title: 'Inspire'
+        title: 'Inspire',
       }],
+      actions: [
+        {
+          color: 'red',
+          icon: 'face',
+          name: 'test one',
+        },
+        {
+          color: 'blue',
+          icon: 'face',
+          name: 'test two',
+        },
+      ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
-    }
-  }
-}
+      title: 'Vuetify.js',
+    };
+  },
+};
 </script>
